@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Nhập số a : <input id="an" type="number" > <br>
+   Nhập số b : <input id="binh" type="number" ><br>
+   <button>submit</button>
+   <p>tong so nguyen to tu a den b la:<a id="ketqua" ></a></p>
+</body>
+<script>
+    let c=document.querySelector('#ketqua') 
+    let btn=document.querySelector('button')
+    function tong(a,b)
+    {
+        let sum=0;
+        for(let i=a;i<=b;i++)
+        {
+            let dem=0;
+            for(let j=2;j<=Math.sqrt(i);j++)
+              { 
+                 if(i%j==0)
+                 {
+                dem++;
+                 }  
+              }
+              if(dem==0)
+                 {
+                  sum+=i;
+                 }
+        }
+        return sum;
+    }
+    btn.addEventListener('click',()=>{
+        let a=document.querySelector('#an').value
+        let b=document.querySelector('#binh').value
+        a=Number(a)
+        b=Number(b)
+        console.log(a);
+        console.log(b);
+        document.querySelector('#ketqua').innerHTML=tong(a,b)
+    })
+</script>
+</html>

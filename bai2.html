@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    nhap vao so n: <input id="n"><br><br>
+    <button id="btn1">in</button><br><br>
+    <button id="btn2">reset</button>
+   <p>in ra hinh tam giac: </p>
+   <ul></ul>
+</body>
+<script>
+    ul=document.querySelector('ul')
+    function numberOneTriangle(n)
+    {
+        
+        for(let i=1;i<=n;i++)
+        {
+            let dem=''
+            const p=document.createElement('p')
+            for(let j=1;j<=i;j++)
+            {
+                dem+='*'
+                
+            }
+            p.textContent=dem;
+            ul.appendChild(p); 
+        }
+    }
+   let btn=document.querySelector('#btn1')
+   let btn2=document.querySelector('#btn2')
+   btn2.addEventListener('click',()=>{
+    location.reload();
+   })
+   btn.addEventListener('click',()=>{
+    
+    let n=document.querySelector('#n').value 
+    n=Number(n)
+    numberOneTriangle(n)
+    
+   })
+</script>
+</html>
